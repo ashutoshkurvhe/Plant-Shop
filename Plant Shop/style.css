@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Tuffy", sans-serif;
+  font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
 }
 
@@ -14,7 +14,8 @@ body {
 
 #home {
   position: relative;
-  min-height: 100vh;
+  min-height: calc(100vh - 100px);
+  display: flex;
 }
 
 header {
@@ -31,7 +32,7 @@ header {
   width: 100px;
   height: 100%;
   text-align: center;
-  padding-top: 25px;
+  padding-top: 20px;
   font-size: 24px;
   font-weight: bold;
   background-color: #1a1a1a;
@@ -53,10 +54,7 @@ header {
   z-index: -1;
 }
 
-.logo:hover {
-  background-color: #2a2a2a;
-  transform: translateY(-2px);
-}
+
 
 nav {
   width: calc(100% - 100px);
@@ -116,7 +114,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  color: #4a4a4a;
+  color: #a2fac1 !important;
 }
 
 .sign-in {
@@ -166,16 +164,18 @@ nav ul li a:hover {
 
 .container {
   width: 100%;
-  max-width: 1400px;
-  margin: 20px auto;
+  max-width: calc(100vw - 40px);
+  margin: 40px auto;
   padding: 40px 20px;
   display: flex;
   flex-wrap: wrap-reverse;
   align-items: center;
-  justify-content: space-between;
   gap: 20px;
   position: relative;
   z-index: 1;
+  background:linear-gradient(145deg , rgb(179, 246, 210),black);
+    border-radius: 50px;
+
 }
 
 .hero-text {
@@ -255,6 +255,7 @@ nav ul li a:hover {
   font-size: 3.5em;
 }
 
+
 .hero-text p {
   font-size: 1.1em;
   line-height: 1.6;
@@ -309,7 +310,7 @@ nav ul li a:hover {
 
 .hero-image {
   overflow: hidden;
-  border-radius: 20px;
+  border-radius: 25px;
   transition: all 0.3s ease;
   object-fit: cover;
   margin: 0;
@@ -321,7 +322,7 @@ nav ul li a:hover {
 .hero-image .locator{
   display: inline-block;
   position: sticky;
-  bottom: -5px;
+  bottom: 0;
   left: -5px;
   z-index: 10000;
   width: 50px;
@@ -398,7 +399,7 @@ nav ul li a:hover {
 /* Best Products section */
 .best-products {
   padding: 80px 20px;
-  background-color: #f5f5f5;
+  background-color: #eeecec;
 }
 
 .section-title {
@@ -419,16 +420,22 @@ nav ul li a:hover {
   margin: 0 auto;
 }
 
+::-webkit-scrollbar{
+  display: none;
+}
+
 .products-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  display: flex;
+  overflow: scroll;
   gap: 30px;
-  max-width: 1400px;
+  max-width: 1800px;
   margin: 0 auto;
   padding: 20px;
 }
 
 .product-card {
+  min-width: 250px;
+  height: 350px;
   background: white;
   border-radius: 20px;
   overflow: hidden;
@@ -444,9 +451,8 @@ nav ul li a:hover {
 
 .product-image {
   width: 100%;
-  height: 300px;
+  height: 100% !important;
   overflow: hidden;
-  position: relative;
 }
 
 .product-image img {
@@ -460,19 +466,28 @@ nav ul li a:hover {
   transform: scale(1.1);
 }
 
+.product-card:hover .product-info{
+  bottom: 0px;
+}
+
 .product-info {
-  padding: 20px;
+  padding: 10px 20px;
+  position: absolute;
+  bottom: -110px;
+  background-color: #2c2b2b5c;
+  backdrop-filter: blur(8px);
+  transition: all 0.5s ease;
 }
 
 .product-name {
   font-size: 1.2em;
   font-weight: 600;
-  color: #1a1a1a;
+  color: #fff;
   margin-bottom: 10px;
 }
 
 .product-description {
-  color: #666;
+  color: #d7d4d4;
   font-size: 0.9em;
   line-height: 1.6;
   margin-bottom: 15px;
@@ -481,7 +496,7 @@ nav ul li a:hover {
 .product-price {
   font-size: 1.3em;
   font-weight: 700;
-  color: #1a1a1a;
+  color: #ffffffe1;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -494,7 +509,7 @@ nav ul li a:hover {
 }
 
 .price-tag span:first-child {
-  color: #666;
+  color: #dedddd;
   font-size: 0.8em;
   text-decoration: line-through;
 }
@@ -520,7 +535,7 @@ nav ul li a:hover {
   top: 20px;
   right: 20px;
   background: #1a1a1a;
-  color: white;
+  color: #fff;
   padding: 5px 15px;
   border-radius: 15px;
   font-size: 0.8em;
@@ -541,6 +556,14 @@ nav ul li a:hover {
   .product-image {
     height: 250px;
   }
+}
+
+
+/* New Arrivals */
+
+.new-arrivals{
+    padding: 80px 20px;
+  background-color: #eeecec;
 }
 
 /* Utility Classes */
@@ -702,3 +725,238 @@ html {
   text-align: center;
   
 }
+
+
+/* Footer-SEction */
+
+
+ .footer {
+      background: #0e0f0e;
+      color: #fff;
+      padding: 60px 20px;
+    }
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-width: 1800px;
+      margin: 0 auto;
+    }
+    .footer-column {
+      flex: 1;
+      min-width: 220px;
+      margin: 20px 0;
+    }
+
+    .footer-column p{
+      width: 300px;
+    }
+    .footer h3 {
+      margin-bottom: 20px;
+      font-size: 22px;
+      display: inline-block;
+      padding-bottom: 5px;
+      position: relative;
+    }
+
+    .footer h3::after{
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 1;
+      display: block;
+      width: 1px;
+      height: 2px;
+      background-color: #fff;
+      transition: width 0.5s ease-in-out;
+    }
+
+    .footer h3:hover::after{
+      width: 100%;
+    }
+    .footer p, .footer a {
+      color: #ddd;
+      font-size: 14px;
+      line-height: 1.8;
+      text-decoration: none;
+    }
+    .footer a:hover {
+      color: #fff;
+    }
+    .social-icons a {
+      color: #fff;
+      margin-right: 12px;
+      font-size: 22px;
+      display: inline-block;
+      transition: transform 0.3s, color 0.3s;
+    }
+    .social-icons a:hover {
+      color: #c8e6c9;
+      transform: translateY(-5px);
+    }
+    .newsletter input[type="email"] {
+      padding: 10px;
+      width: 80%;
+      border: none;
+      border-radius: 4px;
+      margin-right: 5px;
+    }
+    .newsletter button {
+      padding: 10px 15px;
+      border: none;
+      background: #66bb6a;
+      color: #fff;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .newsletter button:hover {
+      background: #91e495;
+    }
+    .footer-bottom {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 13px;
+      color: #bbb;
+      border-top: 1px solid white;
+      padding-top: 20px;
+    }
+    @media (max-width: 768px) {
+      .footer-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .footer-column {
+        text-align: center;
+      }
+      .newsletter input[type="email"] {
+        width: 70%;
+      }
+    }
+
+    /* Testimonial-section */
+
+     .testimonial-section {
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .testimonial-section h2 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      color: #2f5d34;
+    }
+    .testimonial-section p.subtitle {
+      color: #4a7d4f;
+      margin-bottom: 40px;
+      font-size: 1.1em;
+    }
+    .testimonials {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .testimonial-card {
+      background: #a2a2a261;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      max-width: 350px;
+      padding: 20px;
+      text-align: left;
+      transition: transform 0.3s ease;
+    }
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+    }
+    .testimonial-card img {
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      margin-right: 15px;
+    }
+    .testimonial-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    .testimonial-name {
+      font-weight: bold;
+      color: #2f5d34;
+      margin: 0;
+    }
+    .testimonial-role {
+      font-size: 0.9em;
+      color: #5c8d5f;
+      margin: 0;
+    }
+    .testimonial-text {
+      font-size: 0.95em;
+      margin-bottom: 10px;
+      color: #3d6140;
+    }
+    .stars {
+      color: #f4c150;
+      font-size: 1.1em;
+    }
+
+    @media (max-width: 768px) {
+      .testimonials {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+
+    /* Add-Section */
+
+     .carousel {
+      position: relative;
+      max-width: 100%;
+      height: 280px;
+      overflow: hidden;
+      border-radius: 20px;
+      
+      /* box-shadow: 0 4px 20px rgba(0,0,0,0.2); */
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slide {
+      min-width: 100%;
+      transition: opacity 1s;
+      display: flex;
+      justify-content: center;
+    }
+
+    .slide img {
+      width: 70%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .dots {
+      text-align: center;
+      position: absolute;
+      bottom: 15px;
+      width: 100%;
+    }
+
+    .dot {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      margin: 0 5px;
+      background: rgba(242, 125, 125, 0.7);
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .dot.active {
+      background: rgba(255,255,255,1);
+    }

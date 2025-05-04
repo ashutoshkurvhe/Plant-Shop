@@ -55,8 +55,6 @@ header {
   z-index: -1;
 }
 
-
-
 nav {
   width: calc(100% - 100px);
   display: flex;
@@ -103,18 +101,18 @@ nav ul:nth-child(1)::after {
   z-index: -1;
 }
 
-nav ul li {
+ul li {
   list-style: none;
 }
 
-nav ul li a {
+ul li a {
   text-decoration: none;
-  color: #1a1a1a;
+  color: black;
   font-weight: 500;
   transition: all 0.3s ease;
 }
 
-nav ul li a:hover {
+ul li a:hover {
   color: #a2fac1 !important;
 }
 
@@ -137,11 +135,48 @@ nav ul li a:hover {
 }
 
 .bars{
+  display: none;
   position: absolute;
   top: 22px;
   right: 25px;
   font-size: 1.6em;
+  border: none;
+  outline: none;
 }
+
+aside{
+  padding: 50px 20px;
+  position: absolute;
+  top: 0;
+  right: -500px;
+  width: 200px;
+  height: 100vh;
+  background-color: #30303085;
+  backdrop-filter: blur(8px);
+  transition: all 0.5s ease-in-out;
+}
+
+aside ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+aside ul li a{
+  color: white;
+}
+
+aside > hr{
+  margin-top: 400px;
+}
+
+aside .social-icons{
+  margin: 12px;
+}
+
+.show-sidebar{
+    right: 0;
+}
+
 
 
 
@@ -166,7 +201,9 @@ nav ul li a:hover {
   display: none;
   }
 
-  
+  .bars{
+    display: inline-block;
+  }
 
 }
 

@@ -163,6 +163,15 @@ const newArrivals = [
 
 const bestProductsGrid = document.querySelector(".bestProducts-grid");
 const newArrivalsGrid = document.querySelector(".newArrivals-grid");
+const sidebar = document.querySelector("aside")
+
+document.querySelector(".bars").addEventListener("click", () => {
+  sidebar.classList.add("show-sidebar")
+})
+
+sidebar.addEventListener("click", () => {
+  sidebar.classList.remove("show-sidebar");
+});
 
 const addBestProducts = () => {
   bestProducts.map((products) => {
@@ -247,4 +256,7 @@ dots.forEach((dot, index) => {
     slideInterval = setInterval(nextSlide, 3000);
   });
 });
+
+
+
 

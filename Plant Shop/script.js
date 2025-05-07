@@ -166,12 +166,12 @@ const newArrivalsGrid = document.querySelector(".newArrivals-grid");
 const sidebar = document.querySelector("aside")
 
 document.querySelector(".bars").addEventListener("click", () => {
-  sidebar.classList.add("show-sidebar")
+  sidebar.classList.toggle("show-sidebar")
 })
 
-sidebar.addEventListener("click", () => {
-  sidebar.classList.remove("show-sidebar");
-});
+// sidebar.addEventListener("click", () => {
+//   sidebar.classList.remove("show-sidebar");
+// });
 
 const addBestProducts = () => {
   bestProducts.map((products) => {
